@@ -1,6 +1,7 @@
 import re
 import time
 import datetime
+from prettytable import PrettyTable
 
 
 mail_regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
@@ -76,9 +77,9 @@ def login():
         print("Invalid credintial")
 
 
-def read_users():
+def read_data(path):
     try:
-        file1 = open("Data/users.txt", "r")
+        file1 = open(path, "r")
     except Exception:
         return False
     else:
@@ -118,8 +119,64 @@ def validate_date(Date_name):
 # read_users()
 # registeration_user()
 
-loged_user=0
+loged_user=1
 
 # Create_project()
 
-add_data("Data/projects.txt",Create_project() )
+# add_data("Data/projects.txt",Create_project())
+
+def display_data(metaDAta, data):
+    t = PrettyTable(metaDAta)
+    for item in data:
+        item_values = item.split(':')
+        t.add_row(item_values)
+    else:
+        print(t)
+
+
+def project_search(id, projects):
+    for x, item in enumerate(projects):
+        if id == int(item.split(':')[0]):
+            return x
+    else:
+        return -1
+
+
+
+def edit_data(id, feildnum, data):
+    projects = read_data("Data/projects.txt")
+    project_location=project_search(id, projects)
+    if project_location == -1:
+        return "project dosn't exist"
+
+    project_data = projects[project_location].split(':')
+    project_data[feildnum]=data
+    project_data_str = ':'.join(project_data[::])
+    projects[project_location]=project_data_str
+    return projects
+
+
+def delete_project(id):
+    projects = read_data("Data/projects.txt")
+    project_location=project_search(id, projects)
+    if project_location == -1:
+        return "project dosn't exist"
+
+    projects.pop(project_location)
+    return projects
+
+
+def overwrite_data(path, data):
+    try:
+        file1 = open(path, "w")
+        file1.writelines(data)
+    except Exception:
+        print("unable to open file")
+
+
+
+
+
+# print(delete_project(1680644836))
+# print(edit_data(1680644836, 2, "mmmmmm"))
+overwrite_data("Data/projects.txt",delete_project(1680644836))
