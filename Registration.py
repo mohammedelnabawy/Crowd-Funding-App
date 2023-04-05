@@ -179,4 +179,5 @@ def overwrite_data(path, data):
 
 # print(delete_project(1680644836))
 # print(edit_data(1680644836, 2, "mmmmmm"))
-overwrite_data("Data/projects.txt",delete_project(1680644836))
+# overwrite_data("Data/projects.txt",delete_project(1680644836))
+display_data("", read_data("Data/projects.txt"))
