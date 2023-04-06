@@ -20,7 +20,7 @@ Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over U
     * Login
     * The user should be able to login after activation using his email and password
 
-2. Projects:
+2. <b>Projects</b>:
     * The user can create a project fund raise campaign which contains:
     * Title
     * Details
