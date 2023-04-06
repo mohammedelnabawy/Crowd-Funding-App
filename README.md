@@ -8,7 +8,7 @@ Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over U
 
 # <h2>The app include the following features:</h2>
 
-1. <h3>Authentication System:</h3>:
+1. <b>Authentication System:</b>
     * Unordered sub-list. 
     * Registration
     * First name
