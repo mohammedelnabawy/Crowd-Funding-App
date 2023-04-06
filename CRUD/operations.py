@@ -1,4 +1,5 @@
-from projectsFiles import validate
+from colorama import Fore, Back, Style
+from CRUD import validate
 import ReadWriteData
 import time
 import re
@@ -35,9 +36,9 @@ def edit_data(id, feildnum, token):
     projects = ReadWriteData.read_data("Data/projects.txt")
     project_location=project_search(id, projects, token)
     if project_location == -1:
-        return "project dosn't exist"
+        return Fore.RED + "project dosn't exist" + Style.RESET_ALL
     elif project_location == -2:
-        return "you are not authorized"
+        return Fore.RED + "you are not authorized" + Style.RESET_ALL
 
     project_data = projects[project_location].split(':')
     if feildnum==1:
@@ -51,22 +52,22 @@ def edit_data(id, feildnum, token):
     elif feildnum==5:
         data = validate.validate_date("Project end date")
     else:
-        return "Invalid item"
+        return Fore.RED + "Invalid item" + Style.RESET_ALL
 
     project_data[feildnum+1]=data
     project_data_str = ':'.join(project_data[::])
     projects[project_location]=project_data_str
     ReadWriteData.overwrite_data('Data/projects.txt', projects)
-    return 'Field updated succsessfuly'
+    return Fore.GREEN + 'Field updated succsessfuly' + Style.RESET_ALL
 
 def delete_project(id, token):
     projects = ReadWriteData.read_data("Data/projects.txt")
     project_location=project_search(id, projects, token)
     if project_location == -1:
-        return "project dosn't exist"
+        return Fore.RED + "project dosn't exist" + Style.RESET_ALL
     elif project_location == -2:
-        return "you are not authorized"
+        return Fore.RED + "you are not authorized" + Style.RESET_ALL
     projects.pop(project_location)
     ReadWriteData.overwrite_data('Data/projects.txt', projects)
-    return 'Field deleted succsessfuly'
+    return Fore.GREEN +'Field deleted succsessfuly' + Style.RESET_ALL
 

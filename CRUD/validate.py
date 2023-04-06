@@ -1,3 +1,4 @@
+from colorama import Fore, Back, Style
 import re
 import datetime
 
@@ -15,7 +16,7 @@ def enter_data(Data_name, Data_regex=''):
         if len(add_data) and re.fullmatch(Data_regex, add_data):
             return add_data
         else:
-            print(f"Invalid {Data_name}....")
+            print(Fore.RED + f'\n  Invalid {Data_name}....\n' + Style.RESET_ALL)
 
 def validate_date(Date_name):
     while True:
@@ -30,4 +31,5 @@ def validate_date(Date_name):
         if(isValidDate):
             return date
         else:
-            print("Input date is not valid..")
+            print(Fore.RED + '\n    Date is not valid..\n' + Style.RESET_ALL)
+            

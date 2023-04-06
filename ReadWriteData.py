@@ -3,8 +3,10 @@ def add_data(path, data):
         file1 = open(path, "a")
         file1.write(data)
         file1.write("\n")
+        return True
     except Exception:
         print("unable to open file")
+        return False
 
 def read_data(path):
     try:

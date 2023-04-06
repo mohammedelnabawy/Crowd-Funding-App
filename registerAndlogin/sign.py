@@ -1,7 +1,8 @@
+from registerAndlogin import validation
+from colorama import Fore, Back, Style
+import ReadWriteData
 import re
 import time
-from registerAndlogin import validation
-import ReadWriteData
 
 mail_regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 name_regex = re.compile(r'^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$')
@@ -14,7 +15,7 @@ def enter_data(Data_name, Data_regex=''):
         if len(add_data) and re.fullmatch(Data_regex, add_data):
             return add_data
         else:
-            print(f"Invalid {Data_name}....")
+            print(Fore.RED + f"\n   Invalid {Data_name}....\n" + Style.RESET_ALL)
 
 def registeration_user():
     id = round(time.time())
@@ -30,12 +31,13 @@ def login():
     password = enter_data("Password", pass_reges)
     users = ReadWriteData.read_data('Data/users.txt')
     if users == False:
-        print("Invalid credintial")
+        print(Fore.RED + '\n   Invalid credintial\n' + Style.RESET_ALL)
         return 
     for user in users:
         if Email == user.split(':')[3] and password == user.split(':')[4]:
-            print("you are logged in")
+            print(Fore.GREEN + '\n   you are loggedIn\n' + Style.RESET_ALL)
             return user.split(':')[0]
             break
     else:
-        print("Invalid credintial")
+        print(Fore.RED + '\n   Invalid credintial\n' + Style.RESET_ALL)
+        login()

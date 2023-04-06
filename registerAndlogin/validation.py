@@ -1,12 +1,11 @@
 
 from registerAndlogin import sign
+from colorama import Fore, Back, Style
 import re
 
 import ReadWriteData
 mail_regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+')
 pass_reges = re.compile(r'[0-9a-zA-Z]{8,}')
-
-
 
 def validate_confirm_pass():
     while True:
@@ -24,7 +23,7 @@ def check_mail():
 
         for user in users:
             if Email == user.split(':')[3]:
-                print("Email is already exist")
+                print(Fore.RED + '\n   Email is already exist\n' + Style.RESET_ALL)
                 break
         else:
             return Email
