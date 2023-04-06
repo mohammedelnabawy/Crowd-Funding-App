@@ -1,5 +1,4 @@
 # Crowd-Funding-App
------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Crowdfunding is the practice of funding a project or venture by raising small amounts of money from a large number of people, typically via the Internet.
 
@@ -9,7 +8,7 @@ Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over U
 
 # <h2>The app include the following features:</h2>
 
-1. <h3>Authentication System:</h3>
+1. <h3>Authentication System:</h3>:
     * Unordered sub-list. 
     * Registration
     * First name
