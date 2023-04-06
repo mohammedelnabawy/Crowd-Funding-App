@@ -6,9 +6,9 @@ Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over U
 
 <b>The aim of the project:</b> Create a console app to start fundraise projects.
 
-# <h2>The app include the following features:</h2>
+## The app include the following features:
 
-1. <b>Authentication System:</b>
+1. ### Authentication System:
     * Unordered sub-list. 
     * Registration
     * First name
@@ -20,7 +20,7 @@ Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over U
     * Login
     * The user should be able to login after activation using his email and password
 
-2. <b>Projects</b>:
+2. ### Projects:
     * The user can create a project fund raise campaign which contains:
     * Title
     * Details
