@@ -4,7 +4,8 @@ Crowdfunding is the practice of funding a project or venture by raising small am
 
 Crowdfunding is a form of crowdsourcing and alternative finance. In 2015, over US$34 billion was raised worldwide by crowdfunding.
 
-<b>The aim of the project:</b> Create a console app to start fundraise projects.
+### The aim of the project:
+Create a console app to start fundraise projects.
 
 ## The app include the following features:
 
